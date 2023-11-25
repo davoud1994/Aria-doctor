@@ -12,9 +12,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        // گرفتن اطلاعات از جدول دکتر 
-        $Doctor=Doctor::where('Firstname','علیرضا')->pluck('id');
-        return view('front.index',compact('Doctor'));
+        // گرفتن اطلاعات از جدول دکتر
+        $info_Doctor=Doctor::all();
+        return view('front.index',compact('info_Doctor'));
     }
 
     /**
@@ -38,7 +38,8 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //
+        // return $doctor;
+        return view('front.show',compact('doctor'));
     }
 
     /**

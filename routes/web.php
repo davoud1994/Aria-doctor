@@ -17,3 +17,4 @@ Route::get('/', function () {
 });
 
 Route::get('/index',[DoctorController::class,'index'])->name('index');
+Route::get('doctor_info/{doctor}',[DoctorController::class,'show'])->name('doctor_info_show');
