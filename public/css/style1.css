@@ -1,0 +1,29 @@
+.doc1{
+ border-style: solid;
+ border-radius:10px;
+ border-width: 1px; 
+ width:250px; 
+ height:260px;
+ object-fit:content;
+
+ 
+}
+
+.btn.btn-primary{
+  width:250px;
+
+}
+
+.main{
+  display:flex;
+  flex-direction:row;
+  width:20px;
+
+}
+
+.content1{
+  display:flex;
+  flex-direction:column;
+  margin-right:50px;
+ 
+}

@@ -10,53 +10,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <link href='css/style1.css' rel='stylesheet'>
     <title>Document</title>
 </head>
 
 <body dir="rtl">
-    <table class="table caption-top">
-        <div style='margin-top:10px'>لیست اطلاعات پزشکان</div>
-        <hr>
-        <thead>
-            <tr>
-                <th scope="col">شناسه</th>
-                <th scope="col">نام </th>
-                <th scope="col">نام خانوادگی</th>
-                <th scope="col">شماره نظام پزشکی</th>
-                <th scope="col">ادرس</th>
-                <th scope="col">تلفن همراه</th>
-                <th scope="col">تلفن ثابت</th>
-                <th scope="col">فعالیت</th>
-                <th scope="col">موقعیت</th>
-                <th scope="col">توضیحات</th>
-                <th scope="col">اطلاعات تکمیلی</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($info_Doctor as $Doctor)
-                <tr>
 
-                    <th scope="col">{{ $Doctor->id }}</th>
-                    <th scope="col">{{ $Doctor->Firstname }}</th>
-                    <th scope="col">{{ $Doctor->Lastname }}</th>
-                    <th scope="col">{{ $Doctor->Number_Doc }}</th>
-                    <th scope="col">{{ $Doctor->Address }}</th>
-                    <th scope="col">{{ $Doctor->Cellphone }}</th>
-                    <th scope="col">{{ $Doctor->Tellphone }}</th>
-                    <th scope="col">{{ $Doctor->IsDelete }}</th>
-                    <th scope="col">{{ $Doctor->Status }}</th>
-                    <th scope="col">{{ $Doctor->Description }}</th>
-                    <th>
-                        <a href="{{ route('doctor_info_show', $Doctor->id) }}">
-                            <button class='btn btn-primary'>کلیک کنید</button></a>
-                    </th>
+    <div style='margin-top:10px'>لیست اطلاعات پزشکان</div>
+    <hr>
+    <div class='main'>
+
+        @foreach ($info_Doctor as $Doctor)
+            <div class='content1'>
+                {{ $Doctor->Firstname }}
+                {{ $Doctor->Lastname }}
+                <img class='doc1' src='{{ $Doctor->image }}'>
+                <a href="{{ route('doctor_info_show', $Doctor->id) }}">
+                    <button class='btn btn-primary'>کلیک کنید</button></a>
+
+            </div>
+        @endforeach
+    </div>
 
 
-                </tr>
-            @endforeach
 
-        </tbody>
-    </table>
 </body>
 
 </html>
