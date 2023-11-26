@@ -18,22 +18,20 @@
 
     <div style='margin-top:10px'>لیست اطلاعات پزشکان</div>
     <hr>
-    <div class='main'>
+    <div class='row'>
 
         @foreach ($info_Doctor as $Doctor)
-            <div class='content1'>
+            <div id='content1' class="col-md-3">
                 {{ $Doctor->Firstname }}
                 {{ $Doctor->Lastname }}
                 <img class='doc1' src='{{ $Doctor->image }}'>
                 <a href="{{ route('doctor_info_show', $Doctor->id) }}">
                     <button class='btn btn-primary'>کلیک کنید</button></a>
 
-            </div>
+  </div>
         @endforeach
+
     </div>
-
-
-
 </body>
 
 </html>
